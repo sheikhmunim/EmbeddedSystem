@@ -1,0 +1,129 @@
+   1               		.file	"led.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	main
+  18               	main:
+  19               	.LFB6:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	.LM2:
+  24 0000 8FEF      		ldi r24,lo8(-1)
+  25 0002 87BB      		out 55-32,r24
+  26               	.LM3:
+  27 0004 8ABB      		out 58-32,r24
+  28               	.LM4:
+  29 0006 4FEF      		ldi r20,lo8(-1)
+  30               	.LBB24:
+  31               	.LBB25:
+  32               	.LBB26:
+  33               	.LBB27:
+  34               	.LM5:
+  35 0008 29E1      		ldi r18,lo8(25)
+  36 000a 30E0      		ldi r19,hi8(25)
+  37               	.LVL0:
+  38               	.L5:
+  39               	.LBE27:
+  40               	.LBE26:
+  41               	.LBE25:
+  42               	.LBE24:
+  43               	.LM6:
+  44 000c 48BB      		out 56-32,r20
+  45 000e 80E1      		ldi r24,lo8(10000)
+  46 0010 97E2      		ldi r25,hi8(10000)
+  47               	.LVL1:
+  48               	.L2:
+  49               	.LBB31:
+  50               	.LBB30:
+  51               	.LBB29:
+  52               	.LBB28:
+  53               	.LM7:
+  54 0012 F901      		movw r30,r18
+  55               	.LVL2:
+  56               	/* #APP */
+  57               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+  58 0014 3197      		1: sbiw r30,1
+  59 0016 01F4      		brne 1b
+  60               	 ;  0 "" 2
+  61               	/* #NOAPP */
+  62               	.LBE28:
+  63               	.LBE29:
+  64               	.LM8:
+  65 0018 0197      		sbiw r24,1
+  66               	.LM9:
+  67 001a 01F4      		brne .L2
+  68               	.LBE30:
+  69               	.LBE31:
+  70               	.LM10:
+  71 001c 18BA      		out 56-32,__zero_reg__
+  72 001e 80E1      		ldi r24,lo8(10000)
+  73 0020 97E2      		ldi r25,hi8(10000)
+  74               	.LVL3:
+  75               	.L3:
+  76               	.LBB32:
+  77               	.LBB33:
+  78               	.LBB34:
+  79               	.LBB35:
+  80               	.LM11:
+  81 0022 F901      		movw r30,r18
+  82               	.LVL4:
+  83               	/* #APP */
+  84               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+  85 0024 3197      		1: sbiw r30,1
+  86 0026 01F4      		brne 1b
+  87               	 ;  0 "" 2
+  88               	/* #NOAPP */
+  89               	.LBE35:
+  90               	.LBE34:
+  91               	.LM12:
+  92 0028 0197      		sbiw r24,1
+  93               	.LM13:
+  94 002a 01F4      		brne .L3
+  95               	.LBE33:
+  96               	.LBE32:
+  97               	.LM14:
+  98 002c 48BB      		out 56-32,r20
+  99 002e 80E1      		ldi r24,lo8(10000)
+ 100 0030 97E2      		ldi r25,hi8(10000)
+ 101               	.LVL5:
+ 102               	.L4:
+ 103               	.LBB36:
+ 104               	.LBB37:
+ 105               	.LBB38:
+ 106               	.LBB39:
+ 107               	.LM15:
+ 108 0032 F901      		movw r30,r18
+ 109               	.LVL6:
+ 110               	/* #APP */
+ 111               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 112 0034 3197      		1: sbiw r30,1
+ 113 0036 01F4      		brne 1b
+ 114               	 ;  0 "" 2
+ 115               	/* #NOAPP */
+ 116               	.LBE39:
+ 117               	.LBE38:
+ 118               	.LM16:
+ 119 0038 0197      		sbiw r24,1
+ 120               	.LM17:
+ 121 003a 01F4      		brne .L4
+ 122 003c 00C0      		rjmp .L5
+ 123               	.LBE37:
+ 124               	.LBE36:
+ 125               	.LFE6:
+ 151               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 led.c
+C:\Users\Lenovo\AppData\Local\Temp/ccNQU7TL.s:2      *ABS*:0000003f __SREG__
+C:\Users\Lenovo\AppData\Local\Temp/ccNQU7TL.s:3      *ABS*:0000003e __SP_H__
+C:\Users\Lenovo\AppData\Local\Temp/ccNQU7TL.s:4      *ABS*:0000003d __SP_L__
+C:\Users\Lenovo\AppData\Local\Temp/ccNQU7TL.s:5      *ABS*:00000034 __CCP__
+C:\Users\Lenovo\AppData\Local\Temp/ccNQU7TL.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\Lenovo\AppData\Local\Temp/ccNQU7TL.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\Lenovo\AppData\Local\Temp/ccNQU7TL.s:18     .text:00000000 main
+
+NO UNDEFINED SYMBOLS

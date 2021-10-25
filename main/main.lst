@@ -1,0 +1,127 @@
+   1               		.file	"main.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	main
+  18               	main:
+  19               	.LFB6:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	.LM2:
+  24 0000 8FEF      		ldi r24,lo8(-1)
+  25 0002 87BB      		out 55-32,r24
+  26               	.LM3:
+  27 0004 86B1      		in r24,38-32
+  28 0006 8660      		ori r24,lo8(6)
+  29 0008 86B9      		out 38-32,r24
+  30               	.LM4:
+  31 000a 3D9A      		sbi 39-32,5
+  32               	.LM5:
+  33 000c 3E9A      		sbi 39-32,6
+  34               	.LM6:
+  35 000e 339A      		sbi 38-32,3
+  36               	.LM7:
+  37 0010 379A      		sbi 38-32,7
+  38               	.LM8:
+  39               	/* #APP */
+  40               	 ;  25 "main.c" 1
+  41 0012 7894      		sei
+  42               	 ;  0 "" 2
+  43               	.LM9:
+  44               	/* #NOAPP */
+  45 0014 369A      		sbi 38-32,6
+  46               	.L2:
+  47 0016 00C0      		rjmp .L2
+  48               	.LFE6:
+  50               	.global	__vector_14
+  52               	__vector_14:
+  53               	.LFB7:
+  54               	.LM10:
+  55 0018 1F92      		push __zero_reg__
+  56 001a 0F92      		push r0
+  57 001c 0FB6      		in r0,__SREG__
+  58 001e 0F92      		push r0
+  59 0020 1124      		clr __zero_reg__
+  60 0022 2F93      		push r18
+  61 0024 3F93      		push r19
+  62 0026 8F93      		push r24
+  63 0028 9F93      		push r25
+  64               	/* prologue: Signal */
+  65               	/* frame size = 0 */
+  66               	.LM11:
+  67 002a 85B1      		in r24,37-32
+  68 002c 282F      		mov r18,r24
+  69               	.LVL0:
+  70 002e 30E0      		ldi r19,lo8(0)
+  71               	.LVL1:
+  72               	.LM12:
+  73 0030 97B1      		in r25,39-32
+  74 0032 9036      		cpi r25,lo8(96)
+  75 0034 01F0      		breq .L6
+  76 0036 9136      		cpi r25,lo8(97)
+  77 0038 01F4      		brne .L12
+  78 003a 00C0      		rjmp .L14
+  79               	.L6:
+  80               	.LM13:
+  81 003c 2739      		cpi r18,151
+  82 003e 3105      		cpc r19,__zero_reg__
+  83 0040 04F0      		brlt .L8
+  84               	.LM14:
+  85 0042 82E0      		ldi r24,lo8(2)
+  86 0044 88BB      		out 56-32,r24
+  87               	.L8:
+  88               	.LM15:
+  89 0046 81E6      		ldi r24,lo8(97)
+  90 0048 00C0      		rjmp .L13
+  91               	.L14:
+  92               	.LM16:
+  93 004a 2739      		cpi r18,151
+  94 004c 3105      		cpc r19,__zero_reg__
+  95 004e 04F0      		brlt .L10
+  96               	.LM17:
+  97 0050 88E0      		ldi r24,lo8(8)
+  98 0052 88BB      		out 56-32,r24
+  99               	.L10:
+ 100               	.LM18:
+ 101 0054 80E6      		ldi r24,lo8(96)
+ 102               	.L13:
+ 103 0056 87B9      		out 39-32,r24
+ 104 0058 00C0      		rjmp .L9
+ 105               	.L12:
+ 106               	.LM19:
+ 107 005a 18BA      		out 56-32,__zero_reg__
+ 108               	.L9:
+ 109               	.LM20:
+ 110 005c 369A      		sbi 38-32,6
+ 111               	/* epilogue start */
+ 112               	.LM21:
+ 113 005e 9F91      		pop r25
+ 114 0060 8F91      		pop r24
+ 115 0062 3F91      		pop r19
+ 116               	.LVL2:
+ 117 0064 2F91      		pop r18
+ 118               	.LVL3:
+ 119 0066 0F90      		pop r0
+ 120 0068 0FBE      		out __SREG__,r0
+ 121 006a 0F90      		pop r0
+ 122 006c 1F90      		pop __zero_reg__
+ 123 006e 1895      		reti
+ 124               	.LFE7:
+ 158               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\Lenovo\AppData\Local\Temp/ccsNhFwj.s:2      *ABS*:0000003f __SREG__
+C:\Users\Lenovo\AppData\Local\Temp/ccsNhFwj.s:3      *ABS*:0000003e __SP_H__
+C:\Users\Lenovo\AppData\Local\Temp/ccsNhFwj.s:4      *ABS*:0000003d __SP_L__
+C:\Users\Lenovo\AppData\Local\Temp/ccsNhFwj.s:5      *ABS*:00000034 __CCP__
+C:\Users\Lenovo\AppData\Local\Temp/ccsNhFwj.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\Lenovo\AppData\Local\Temp/ccsNhFwj.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\Lenovo\AppData\Local\Temp/ccsNhFwj.s:18     .text:00000000 main
+C:\Users\Lenovo\AppData\Local\Temp/ccsNhFwj.s:52     .text:00000018 __vector_14
+
+NO UNDEFINED SYMBOLS

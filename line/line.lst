@@ -1,0 +1,147 @@
+   1               		.file	"line.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	main
+  18               	main:
+  19               	.LFB6:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	.LM2:
+  24 0000 8FEF      		ldi r24,lo8(-1)
+  25 0002 87BB      		out 55-32,r24
+  26               	.LM3:
+  27 0004 85E0      		ldi r24,lo8(5)
+  28 0006 88BB      		out 56-32,r24
+  29               	.LM4:
+  30 0008 329A      		sbi 38-32,2
+  31               	.LM5:
+  32 000a 3D9A      		sbi 39-32,5
+  33               	.LM6:
+  34 000c 3E9A      		sbi 39-32,6
+  35               	.LM7:
+  36 000e 339A      		sbi 38-32,3
+  37               	.LM8:
+  38 0010 379A      		sbi 38-32,7
+  39               	.LM9:
+  40               	/* #APP */
+  41               	 ;  25 "line.c" 1
+  42 0012 7894      		sei
+  43               	 ;  0 "" 2
+  44               	.LM10:
+  45               	/* #NOAPP */
+  46 0014 369A      		sbi 38-32,6
+  47               	.L2:
+  48 0016 00C0      		rjmp .L2
+  49               	.LFE6:
+  51               	.global	__vector_14
+  53               	__vector_14:
+  54               	.LFB7:
+  55               	.LM11:
+  56 0018 1F92      		push __zero_reg__
+  57 001a 0F92      		push r0
+  58 001c 0FB6      		in r0,__SREG__
+  59 001e 0F92      		push r0
+  60 0020 1124      		clr __zero_reg__
+  61 0022 2F93      		push r18
+  62 0024 8F93      		push r24
+  63 0026 9F93      		push r25
+  64               	/* prologue: Signal */
+  65               	/* frame size = 0 */
+  66               	.LM12:
+  67 0028 85B1      		in r24,37-32
+  68 002a 90E0      		ldi r25,lo8(0)
+  69               	.LVL0:
+  70               	.LM13:
+  71 002c 27B1      		in r18,39-32
+  72 002e 2136      		cpi r18,lo8(97)
+  73 0030 01F0      		breq .L7
+  74 0032 2236      		cpi r18,lo8(98)
+  75 0034 01F0      		breq .L8
+  76 0036 2036      		cpi r18,lo8(96)
+  77 0038 01F4      		brne .L14
+  78               	.LM14:
+  79 003a 8536      		cpi r24,101
+  80 003c 9105      		cpc r25,__zero_reg__
+  81               	.LVL1:
+  82 003e 04F0      		brlt .L9
+  83               	.LM15:
+  84 0040 82E0      		ldi r24,lo8(2)
+  85               	.LVL2:
+  86 0042 88BB      		out 56-32,r24
+  87               	.LVL3:
+  88               	.L9:
+  89               	.LM16:
+  90 0044 81E6      		ldi r24,lo8(97)
+  91               	.LVL4:
+  92 0046 00C0      		rjmp .L15
+  93               	.L7:
+  94               	.LM17:
+  95 0048 8536      		cpi r24,101
+  96 004a 9105      		cpc r25,__zero_reg__
+  97               	.LVL5:
+  98 004c 04F0      		brlt .L11
+  99               	.LM18:
+ 100 004e 88E0      		ldi r24,lo8(8)
+ 101               	.LVL6:
+ 102 0050 88BB      		out 56-32,r24
+ 103               	.LVL7:
+ 104               	.L11:
+ 105               	.LM19:
+ 106 0052 82E6      		ldi r24,lo8(98)
+ 107               	.LVL8:
+ 108               	.L15:
+ 109 0054 87B9      		out 39-32,r24
+ 110 0056 00C0      		rjmp .L10
+ 111               	.L8:
+ 112               	.LM20:
+ 113 0058 8536      		cpi r24,101
+ 114 005a 9105      		cpc r25,__zero_reg__
+ 115               	.LVL9:
+ 116 005c 04F0      		brlt .L12
+ 117               	.LM21:
+ 118 005e 84E0      		ldi r24,lo8(4)
+ 119               	.LVL10:
+ 120 0060 88BB      		out 56-32,r24
+ 121               	.LVL11:
+ 122               	.L12:
+ 123               	.LM22:
+ 124 0062 80E6      		ldi r24,lo8(96)
+ 125               	.LVL12:
+ 126 0064 00C0      		rjmp .L15
+ 127               	.L14:
+ 128               	.LM23:
+ 129 0066 18BA      		out 56-32,__zero_reg__
+ 130               	.L10:
+ 131               	.LM24:
+ 132 0068 369A      		sbi 38-32,6
+ 133               	/* epilogue start */
+ 134               	.LM25:
+ 135 006a 9F91      		pop r25
+ 136               	.LVL13:
+ 137 006c 8F91      		pop r24
+ 138 006e 2F91      		pop r18
+ 139 0070 0F90      		pop r0
+ 140 0072 0FBE      		out __SREG__,r0
+ 141 0074 0F90      		pop r0
+ 142 0076 1F90      		pop __zero_reg__
+ 143 0078 1895      		reti
+ 144               	.LFE7:
+ 178               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 line.c
+C:\Users\Lenovo\AppData\Local\Temp/ccF0cLLX.s:2      *ABS*:0000003f __SREG__
+C:\Users\Lenovo\AppData\Local\Temp/ccF0cLLX.s:3      *ABS*:0000003e __SP_H__
+C:\Users\Lenovo\AppData\Local\Temp/ccF0cLLX.s:4      *ABS*:0000003d __SP_L__
+C:\Users\Lenovo\AppData\Local\Temp/ccF0cLLX.s:5      *ABS*:00000034 __CCP__
+C:\Users\Lenovo\AppData\Local\Temp/ccF0cLLX.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\Lenovo\AppData\Local\Temp/ccF0cLLX.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\Lenovo\AppData\Local\Temp/ccF0cLLX.s:18     .text:00000000 main
+C:\Users\Lenovo\AppData\Local\Temp/ccF0cLLX.s:53     .text:00000018 __vector_14
+
+NO UNDEFINED SYMBOLS
